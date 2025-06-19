@@ -43,12 +43,5 @@ def check_flipkart():
     # Alert if both conditions are met
     if price <= DESIRED_PRICE and stock_status == "In Stock":
         send_telegram_alert(price, stock_status)
-
-# ==== RUN LOOP ====
-
-while True:
-    try:
-        check_flipkart()
-    except Exception as e:
-        print(f"Error: {e}")
-    time.sleep(CHECK_INTERVAL)
+        
+    print(f"[DEBUG] Price: ₹{price}, Stock: {stock_status}")
