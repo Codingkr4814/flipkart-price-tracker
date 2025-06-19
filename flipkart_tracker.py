@@ -30,6 +30,8 @@ def check_flipkart():
     }
 
     response = requests.get(FLIPKART_URL, headers=headers)
+    print(f"[DEBUG] Response code: {response.status_code}")
+    print(response.text[:500])  # print first 500 chars of the page
     soup = BeautifulSoup(response.content, "html.parser")
 
     # PRICE
